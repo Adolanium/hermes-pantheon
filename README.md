@@ -122,7 +122,7 @@ The bracketed tabs, dotted rules and placement of the art style Hermes Desktop's
 
 Pantheon is one of three packs. They install side by side, and none of their theme names overlap, so every god shows up in the same picker.
 
-- **[Ennead](https://github.com/Adolanium/hermes-ennead)**: 12 Egyptian gods in painted relief and gold leaf. [See them live](https://adolanium.github.io/hermes-ennead/).
+- **[Kemet](https://github.com/Adolanium/hermes-kemet)**: 12 Egyptian gods in painted relief and gold leaf. [See them live](https://adolanium.github.io/hermes-kemet/).
 - **[Asgard](https://github.com/Adolanium/hermes-asgard)**: 12 Norse gods carved in runestone and wood. [See them live](https://adolanium.github.io/hermes-asgard/).
 
 <br />
