@@ -116,7 +116,8 @@ The bracketed tabs, dotted rules and placement of the art style Hermes Desktop's
 | Hermes Desktop | Platform | Status |
 | --- | --- | --- |
 | 0.22.2 | Windows 11 | Tested |
-| 0.22.2 | macOS, Linux | Expected to work; not yet tested |
+| 0.22.2 | Linux (Ubuntu 26.04, GNOME on Wayland) | Tested |
+| 0.22.2 | macOS | Expected to work; not yet tested |
 
 ## More gods
 
