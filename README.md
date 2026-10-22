@@ -84,6 +84,29 @@ The names are `olympus`, `hera`, `poseidon`, `demeter`, `athena`, `apollo`, `art
 
 Hermes remembers your choice for each profile, so a work profile can live on Olympus while a personal one lives on Hades.
 
+## In the terminal too
+
+The eighteen gods also come as skins for `hermes` in the terminal, both the classic interface and `hermes --tui`. Each skin draws the god's bust from the Desktop sidebar as pixel art beside the start panel, letters HERMES AGENT in the god's colours, and repaints the prompt, status bar and menus in the god's palette.
+
+Terminal skins are files, not part of the plugin switch, so copy them once after installing, and again after a plugin update:
+
+```sh
+mkdir -p ~/.hermes/skins
+cp ~/.hermes/plugins/hermes-pantheon/cli/skins/*.yaml ~/.hermes/skins/
+hermes skin use pantheon-olympus
+```
+
+Each skin is the god's name with `pantheon-` in front, so Hermes's own skins of the same name (Poseidon, for one) stay as they are and Desktop keeps the plugin themes with their art. Inside a session, `/skin pantheon-hades` switches too: the prompt, status bar and menus change right away, and the art shows on the next start (`hermes --tui` redraws it at once). Each profile keeps its own skins, so for a profile copy them into `~/.hermes/profiles/<name>/skins/` as well. `hermes skin use default` goes back to the stock look.
+
+- Each skin also carries `banner_art`, the whole bust image 80 columns wide (30 to 40 rows) dithered in three tones of the Desktop inks, like the Desktop art. The TUI paints one colour per line, so Hermes uses `banner_hero`, the 60-column one-colour version, wherever `banner_art` is not supported or does not fit.
+- While you browse skins with `/skin ` and the arrow keys, the classic interface previews each one live: its colours, and a small version of its bust above the menu (`banner_thumb`, shown only by a Hermes that supports it, like `banner_art`). Enter keeps it.
+- The art is tuned for dark terminals; on a light terminal the palette switches to its light variant, but the bust stays light.
+- The bust is 60 columns wide and sits in the panel's left column. In the TUI that column takes up to 40% of the width, so the bust stays whole from about 160 columns; narrower, its right side is cut.
+- Desktop also lists the terminal skins as plain themes (palette only, no art). For the full look in Desktop, pick the god without the `pantheon-` prefix.
+- Hermes shares the active skin between surfaces, so switching skin in the terminal also switches Desktop to that plain `pantheon-` theme. Pick the god without the prefix in Desktop again to get the art back.
+
+The skins are generated from the same art as the Desktop themes: `python3 cli/build_skins.py` (needs Pillow) rewrites `cli/skins/`.
+
 ## Small decisions, already made
 
 - **One install, eighteen themes.** All eighteen ship in a single plugin. There's nothing to choose at install time and nothing extra to download later.
