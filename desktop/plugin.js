@@ -1397,6 +1397,8 @@ ${T} ${SIDEBAR_ZONE} > [data-panel-header] > [data-zone-tabstrip] {
   background: transparent;
   padding-inline: 14px;
   gap: 10px;
+  /* inactive tabs fill with this colour: clear it so the art shows through them, as through the active tab */
+  --pane-tab-strip-bg: transparent;
 }
 
 ${T} [data-tree-group]:not(:has([data-slot="sidebar"])) > [data-panel-header] > [data-zone-tabstrip] {
