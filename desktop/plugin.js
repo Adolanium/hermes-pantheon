@@ -1426,6 +1426,47 @@ ${T} [data-slot="sidebar"] [data-slot="sidebar-content"] > *:last-child {
   padding-bottom: var(--pantheon-art-floor);
 }
 
+/* ── Shorter windows: smaller art, never cropped ─────────────────────────── */
+
+/* Below 1080px the art at 2x leaves only a handful of sessions on screen, so it
+   steps down instead: the bust to 1.5x and the collage to 1x, then the collage
+   goes, then the bust drops to 1x. Each step shows the whole image, scaled from
+   the 160px source, and the header keeps the same 22px under the bust. */
+@media (max-height: 1079px) {
+  ${T} {
+    --pantheon-art-floor: 125px;
+  }
+
+  ${T} ${SIDEBAR_ZONE} > [data-panel-header] {
+    height: 202px !important;
+  }
+
+  ${T} ${SIDEBAR_ZONE} > [data-panel-header]::before {
+    background-size: 240px auto;
+    background-position: right top;
+  }
+
+  ${T} [data-slot="sidebar"]::before {
+    background-size: 160px auto;
+  }
+}
+
+@media (max-height: 859px) {
+  ${T} {
+    --pantheon-art-floor: 0px;
+  }
+}
+
+@media (max-height: 719px) {
+  ${T} ${SIDEBAR_ZONE} > [data-panel-header] {
+    height: 142px !important;
+  }
+
+  ${T} ${SIDEBAR_ZONE} > [data-panel-header]::before {
+    background-size: 160px auto;
+  }
+}
+
 /* ── Tabs: mono caps, bracketed when active ──────────────────────────────── */
 
 ${T} [data-slot="pane-tab"],
