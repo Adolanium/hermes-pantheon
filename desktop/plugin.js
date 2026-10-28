@@ -1377,11 +1377,14 @@ ${T} ${SIDEBAR_ZONE} > [data-panel-header] {
 ${T} ${SIDEBAR_ZONE} > [data-panel-header]::before {
   content: '';
   position: absolute;
-  inset: 0 0 18px 0;
+  /* below the title bar row, so the window controls never sit on the art; the
+     bottom stays put, so the fade still ends above the tabs */
+  inset: 20px 0 18px 0;
   background: url("${ART.top}") center 0 / 320px auto no-repeat;
   image-rendering: pixelated;
-  -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent);
-  mask-image: linear-gradient(to bottom, #000 72%, transparent);
+  /* the art's flat top edge fades in instead of cutting across the hair */
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 9%, #000 72%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 9%, #000 72%, transparent);
   pointer-events: none;
 }
 
